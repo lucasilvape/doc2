@@ -1149,12 +1149,20 @@
         </section>
         <section class="print-page" id="index" heading-number="1"><h1 id="index-index">Home</h1><h2 id="objetivo">Objetivo<a class="headerlink" href="#index-objetivo" title="Permanent link">&para;</a></h2>
 <p>Este repositório contém pipelines de ETL (Extract, Transform, Load) que extraem dados de collections MongoDB e os inserem em tabelas Postgres. </p>
-<p><strong>Propósito:</strong> Todos os produtos seguem o mesmo padrão arquitetural:
-- <strong>Extração:</strong> Dados brutos de duas collections MongoDB principais
-  - Collection de <strong>implementations/infos</strong> (dados do produto/apólice)
-  - Collection de <strong>installments/parcelas</strong> (dados de parcelamento)
-- <strong>Transformação:</strong> Limpeza, conversões de tipos, validações e merge entre collections
-- <strong>Carga:</strong> Inserção dos dados processados em tabelas Postgres específicas por produto</p>
+<p><strong>Propósito:</strong> Todos os produtos seguem o mesmo padrão arquitetural:</p>
+<ul>
+<li><strong>Extração:</strong> Dados brutos de duas collections MongoDB principais</li>
+<li>Collection de <strong>implementations/infos</strong> (dados do produto/apólice)</li>
+<li>
+<p>Collection de <strong>installments/parcelas</strong> (dados de parcelamento)</p>
+</li>
+<li>
+<p><strong>Transformação:</strong> Limpeza, conversões de tipos, validações e merge entre collections</p>
+</li>
+<li>
+<p><strong>Carga:</strong> Inserção dos dados processados em tabelas Postgres específicas por produto</p>
+</li>
+</ul>
 <p><strong>Suporte a modos de atualização:</strong> Incremental (baseado em modificações recentes) ou Full, com escolha automática via modo DINÂMICO.</p>
 <h2 id="index-como-executar">Como executar<a class="headerlink" href="#index-como-executar" title="Permanent link">&para;</a></h2>
 <p>Este trecho é comum a todos os produtos/pipelines deste repositório. Use-o como referência rápida para rodar qualquer pipeline localmente.</p>
@@ -1189,10 +1197,18 @@
 <hr />
 <h2 id="index-arquitetura-geral-dos-pipelines">Arquitetura Geral dos Pipelines<a class="headerlink" href="#index-arquitetura-geral-dos-pipelines" title="Permanent link">&para;</a></h2>
 <h3 id="index-visao-geral">Visão Geral<a class="headerlink" href="#index-visao-geral" title="Permanent link">&para;</a></h3>
-<p>Todos os produtos seguem o mesmo padrão arquitetural de ETL (Extract, Transform, Load):
-- <strong>Fonte:</strong> MongoDB (produção/homologação) com duas collections principais
-- <strong>Destino:</strong> Tabela Postgres específica por produto
-- <strong>Estrutura:</strong> Uma collection de "implementação/infos" + uma collection de "parcelas"</p>
+<p>Todos os produtos seguem o mesmo padrão arquitetural de ETL (Extract, Transform, Load):</p>
+<ul>
+<li>
+<p><strong>Fonte:</strong> MongoDB (produção/homologação) com duas collections principais</p>
+</li>
+<li>
+<p><strong>Destino:</strong> Tabela Postgres específica por produto</p>
+</li>
+<li>
+<p><strong>Estrutura:</strong> Uma collection de "implementação/infos" + uma collection de "parcelas"</p>
+</li>
+</ul>
 <h3 id="index-fluxo-padrao-de-processamento">Fluxo Padrão de Processamento<a class="headerlink" href="#index-fluxo-padrao-de-processamento" title="Permanent link">&para;</a></h3>
 <h4 id="index-1-geracao-de-base-gerar_base_para_busca">1. Geração de Base (<code>gerar_base_para_busca</code>)<a class="headerlink" href="#index-1-geracao-de-base-gerar_base_para_busca" title="Permanent link">&para;</a></h4>
 <ul>
