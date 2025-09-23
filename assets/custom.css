@@ -1,0 +1,45 @@
+/* Garantir que o botão de toggle dark/light mode apareça */
+.md-header__button.md-icon {
+  display: inline-block !important;
+  visibility: visible !important;
+}
+
+/* Estilizar melhor o botão de toggle */
+.md-header__button[for="__palette"] {
+  color: var(--md-primary-fg-color--light);
+  margin: 0 0.2rem;
+}
+
+.md-header__button[for="__palette"]:hover {
+  background-color: rgba(102, 255, 102, 0.1);
+  border-radius: 0.1rem;
+}
+
+/* Melhorar visibilidade no modo escuro */
+[data-md-color-scheme="slate"] .md-header__button[for="__palette"] {
+  color: var(--md-primary-fg-color--light);
+}
+
+/* Adicionar animação suave para o toggle */
+.md-header__button[for="__palette"] svg {
+  transition: transform 0.3s ease;
+}
+
+.md-header__button[for="__palette"]:hover svg {
+  transform: scale(1.1);
+}
+
+/* Customizar cores verdes específicas */
+:root {
+  --md-primary-fg-color: #66FF66;
+  --md-accent-fg-color: #66FF66;
+}
+
+/* Adicionar destaque verde personalizado */
+.md-nav__link--active {
+  color: #66FF66 !important;
+}
+
+.md-nav__link:hover {
+  color: #66FF66 !important;
+}
