@@ -12,11 +12,13 @@
         <meta name="author" content="Equipe de Dados Kovr">
       
       
-        <link rel="canonical" href="https://kovrseguradorabi.github.io/PIPELINES_MONGODB/sobre/">
+        <link rel="canonical" href="https://kovrseguradorabi.github.io/PIPELINES_MONGODB/indices/">
       
       
-        <link rel="prev" href="../ferramentas/">
+        <link rel="prev" href="../produtos/xp_card/">
       
+      
+        <link rel="next" href="../ferramentas/">
       
       
       <link rel="icon" href="../assets/logo.svg">
@@ -24,7 +26,7 @@
     
     
       
-        <title>Sobre - PIPELINES MONGODB</title>
+        <title>Índices - PIPELINES MONGODB</title>
       
     
     
@@ -82,7 +84,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#sobre" class="md-skip">
+        <a href="#status-dos-indices-por-produto" class="md-skip">
           Ir para o conteúdo
         </a>
       
@@ -115,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Sobre
+              Índices
             
           </span>
         </div>
@@ -270,9 +272,11 @@
   
   
   
+    
   
-    <li class="md-tabs__item">
-      <a href="../indices/" class="md-tabs__link">
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
         
   
   
@@ -308,11 +312,9 @@
   
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="./" class="md-tabs__link">
+    <li class="md-tabs__item">
+      <a href="../sobre/" class="md-tabs__link">
         
   
   
@@ -859,10 +861,32 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../indices/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Índices
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -873,6 +897,230 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#por-que-indices-sao-importantes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Por que Índices são Importantes?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Por que Índices são Importantes?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#beneficios-dos-indices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Benefícios dos Índices:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Benefícios dos Índices:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#performance-de-consultas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Performance de Consultas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operacoes-otimizadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operações Otimizadas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#casos-de-uso-especificos-nos-pipelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Casos de Uso Específicos nos Pipelines
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impacto-nos-relatorios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Impacto nos Relatórios
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#legenda" class="md-nav__link">
+    <span class="md-ellipsis">
+      Legenda
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tabela-de-status-dos-indices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tabela de Status dos Índices
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resumo-estatistico" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resumo Estatístico
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#detalhes-dos-indices-por-produto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Detalhes dos Índices por Produto
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detalhes dos Índices por Produto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#disney-ap" class="md-nav__link">
+    <span class="md-ellipsis">
+      Disney AP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metlife-celular" class="md-nav__link">
+    <span class="md-ellipsis">
+      Metlife Celular
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#picpay-cyber" class="md-nav__link">
+    <span class="md-ellipsis">
+      PicPay Cyber
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#picpay-phone" class="md-nav__link">
+    <span class="md-ellipsis">
+      PicPay Phone
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#telefonica-cyber" class="md-nav__link">
+    <span class="md-ellipsis">
+      Telefonica Cyber
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#willbank-carteira" class="md-nav__link">
+    <span class="md-ellipsis">
+      Willbank Carteira
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xp-card" class="md-nav__link">
+    <span class="md-ellipsis">
+      XP Card
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analise-estatistica-dos-indices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Análise Estatística dos Índices
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Análise Estatística dos Índices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#colunas-mais-indexadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Colunas Mais Indexadas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#produtos-com-mais-indices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Produtos com Mais Índices
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -903,32 +1151,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Sobre
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../sobre/" class="md-nav__link">
         
   
   
@@ -939,92 +1165,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Índice">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Índice
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#pipelines-mongodb" class="md-nav__link">
-    <span class="md-ellipsis">
-      PIPELINES MONGODB
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="PIPELINES MONGODB">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#objetivo" class="md-nav__link">
-    <span class="md-ellipsis">
-      Objetivo
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#equipe" class="md-nav__link">
-    <span class="md-ellipsis">
-      Equipe
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Equipe">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#desenvolvedores-do-projeto" class="md-nav__link">
-    <span class="md-ellipsis">
-      Desenvolvedores do Projeto
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#responsabilidades-da-equipe" class="md-nav__link">
-    <span class="md-ellipsis">
-      Responsabilidades da Equipe
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#licenca" class="md-nav__link">
-    <span class="md-ellipsis">
-      Licença
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1056,47 +1196,56 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#pipelines-mongodb" class="md-nav__link">
+  <a href="#por-que-indices-sao-importantes" class="md-nav__link">
     <span class="md-ellipsis">
-      PIPELINES MONGODB
+      Por que Índices são Importantes?
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="PIPELINES MONGODB">
+    <nav class="md-nav" aria-label="Por que Índices são Importantes?">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#objetivo" class="md-nav__link">
+  <a href="#beneficios-dos-indices" class="md-nav__link">
     <span class="md-ellipsis">
-      Objetivo
+      Benefícios dos Índices:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Benefícios dos Índices:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#performance-de-consultas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Performance de Consultas
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#equipe" class="md-nav__link">
+  <a href="#operacoes-otimizadas" class="md-nav__link">
     <span class="md-ellipsis">
-      Equipe
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Equipe">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#desenvolvedores-do-projeto" class="md-nav__link">
-    <span class="md-ellipsis">
-      Desenvolvedores do Projeto
+      Operações Otimizadas
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#responsabilidades-da-equipe" class="md-nav__link">
+  <a href="#casos-de-uso-especificos-nos-pipelines" class="md-nav__link">
     <span class="md-ellipsis">
-      Responsabilidades da Equipe
+      Casos de Uso Específicos nos Pipelines
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impacto-nos-relatorios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Impacto nos Relatórios
     </span>
   </a>
   
@@ -1107,10 +1256,139 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#licenca" class="md-nav__link">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#legenda" class="md-nav__link">
     <span class="md-ellipsis">
-      Licença
+      Legenda
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tabela-de-status-dos-indices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tabela de Status dos Índices
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resumo-estatistico" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resumo Estatístico
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#detalhes-dos-indices-por-produto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Detalhes dos Índices por Produto
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detalhes dos Índices por Produto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#disney-ap" class="md-nav__link">
+    <span class="md-ellipsis">
+      Disney AP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metlife-celular" class="md-nav__link">
+    <span class="md-ellipsis">
+      Metlife Celular
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#picpay-cyber" class="md-nav__link">
+    <span class="md-ellipsis">
+      PicPay Cyber
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#picpay-phone" class="md-nav__link">
+    <span class="md-ellipsis">
+      PicPay Phone
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#telefonica-cyber" class="md-nav__link">
+    <span class="md-ellipsis">
+      Telefonica Cyber
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#willbank-carteira" class="md-nav__link">
+    <span class="md-ellipsis">
+      Willbank Carteira
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xp-card" class="md-nav__link">
+    <span class="md-ellipsis">
+      XP Card
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analise-estatistica-dos-indices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Análise Estatística dos Índices
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Análise Estatística dos Índices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#colunas-mais-indexadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Colunas Mais Indexadas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#produtos-com-mais-indices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Produtos com Mais Índices
     </span>
   </a>
   
@@ -1140,45 +1418,318 @@
   
 
 
-<h1 id="sobre">Sobre<a class="headerlink" href="#sobre" title="Permanent link">&para;</a></h1>
-<h2 id="pipelines-mongodb">PIPELINES MONGODB<a class="headerlink" href="#pipelines-mongodb" title="Permanent link">&para;</a></h2>
-<p>Este projeto foi desenvolvido pela <strong>Equipe de Dados Kovr</strong> para automatizar a extração, transformação e carga (ETL) de dados de collections MongoDB para tabelas Postgres, evitando usar a API dos produtos,
-o que causava um grande impacto operacional.</p>
-<h3 id="objetivo">Objetivo<a class="headerlink" href="#objetivo" title="Permanent link">&para;</a></h3>
-<p>Padronizar e automatizar o processo de migração de dados entre MongoDB e Postgres, garantindo:</p>
+<h1 id="status-dos-indices-por-produto">Status dos Índices por Produto<a class="headerlink" href="#status-dos-indices-por-produto" title="Permanent link">&para;</a></h1>
+<p>Esta página apresenta o status dos índices implementados em cada produto dos pipelines MongoDB.</p>
+<h2 id="por-que-indices-sao-importantes">Por que Índices são Importantes?<a class="headerlink" href="#por-que-indices-sao-importantes" title="Permanent link">&para;</a></h2>
+<p>Os índices em bancos de dados são estruturas auxiliares que aceleram drasticamente as consultas e melhoram a performance geral do sistema. </p>
+<h3 id="beneficios-dos-indices"><strong>Benefícios dos Índices:</strong><a class="headerlink" href="#beneficios-dos-indices" title="Permanent link">&para;</a></h3>
+<h4 id="performance-de-consultas"><strong>Performance de Consultas</strong><a class="headerlink" href="#performance-de-consultas" title="Permanent link">&para;</a></h4>
 <ul>
-<li><strong>Consistência:</strong> Todos os produtos seguem o mesmo padrão arquitetural</li>
-<li><strong>Escalabilidade:</strong> Processamento paralelo e configurável</li>
-<li><strong>Qualidade:</strong> Validação rigorosa com schemas Pandera</li>
-<li><strong>Flexibilidade:</strong> Múltiplos modos de atualização (Diário, Incremental, Full, Dinâmico)</li>
+<li><strong>Busca mais rápida</strong>: Reduzem o tempo de consulta de minutos para milissegundos</li>
+<li><strong>Menos I/O</strong>: Evitam varreduras completas da tabela (full table scan)</li>
+<li><strong>Escalabilidade</strong>: Mantêm performance mesmo com milhões de registros</li>
 </ul>
-<!-- ### Tecnologias Utilizadas
+<h4 id="operacoes-otimizadas"><strong>Operações Otimizadas</strong><a class="headerlink" href="#operacoes-otimizadas" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong><code>WHERE</code> clauses</strong>: Filtros por <code>uuid_bilhete</code>, <code>data_pagamento</code>, etc. ficam instantâneos</li>
+<li><strong><code>ORDER BY</code></strong>: Ordenação por campos indexados é muito mais rápida</li>
+<li><strong><code>JOIN</code></strong>: Junções entre tabelas usando campos indexados são otimizadas</li>
+<li><strong>Agregações</strong>: <code>COUNT</code>, <code>SUM</code>, <code>GROUP BY</code> se beneficiam dos índices</li>
+</ul>
+<h4 id="casos-de-uso-especificos-nos-pipelines"><strong>Casos de Uso Específicos nos Pipelines</strong><a class="headerlink" href="#casos-de-uso-especificos-nos-pipelines" title="Permanent link">&para;</a></h4>
+<div class="admonition example">
+<p class="admonition-title">Exemplos Práticos</p>
+<p><strong>Sem Índice:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">-- Busca pode levar 30+ segundos em tabelas grandes</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">innoveo_picpay_auto</span><span class="w"> </span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">uuid_bilhete</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;12345-67890-abcd&#39;</span><span class="p">;</span>
+</code></pre></div></p>
+<p><strong>Com Índice:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">-- Mesma busca em &lt; 10ms</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">innoveo_willbank_carteira</span><span class="w"> </span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">uuid_bilhete</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;12345-67890-abcd&#39;</span><span class="p">;</span>
+</code></pre></div></p>
+</div>
+<h4 id="impacto-nos-relatorios"><strong>Impacto nos Relatórios</strong><a class="headerlink" href="#impacto-nos-relatorios" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Dashboards</strong>: Consultas de BI ficam muito mais responsivas</li>
+<li><strong>Relatórios periódicos</strong>: Processamento de grandes volumes em menos tempo</li>
+<li><strong>Análises ad-hoc</strong>: Exploração interativa de dados sem travamentos</li>
+</ul>
+<!-- ###  **Considerações Importantes**
 
-- **Python 3.x**
-- **Poetry** (gerenciamento de dependências)
-- **Pandas** (manipulação de dados)
-- **Pandera** (validação de schemas)
-- **PyMongo** (conexão MongoDB)
-- **Psycopg2** (conexão Postgres)
-- **Joblib** (processamento paralelo) -->
+- **Espaço adicional**: Índices ocupam espaço em disco (trade-off aceitável)
+- **Manutenção**: Atualizações nas tabelas também atualizam os índices
+- **Estratégia**: Melhor indexar colunas mais consultadas (`uuid_bilhete`, datas, etc.) -->
 
-<h3 id="equipe">Equipe<a class="headerlink" href="#equipe" title="Permanent link">&para;</a></h3>
-<p><strong>Equipe de Dados Kovr</strong></p>
-<h4 id="desenvolvedores-do-projeto">Desenvolvedores do Projeto<a class="headerlink" href="#desenvolvedores-do-projeto" title="Permanent link">&para;</a></h4>
+<h2 id="legenda">Legenda<a class="headerlink" href="#legenda" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Thiago Holanda Ramalho</strong> - <a href="mailto:Thiago.Ramalho@kovr.com.br">Thiago.Ramalho@kovr.com.br</a></li>
-<li><strong>Lucas Silva Pereira</strong> - <a href="mailto:lucas.silva@kev.tech">lucas.silva@kev.tech</a></li>
-<li><strong>Matheus Araujo Oliveira</strong> - <a href="mailto:Matheus.Oliveira@kovr.com.br">Matheus.Oliveira@kovr.com.br</a></li>
-<li><strong>Ricardo Campos Lima Dufloth</strong> - <a href="mailto:ricardo.dufloth@kovr.com.br">ricardo.dufloth@kovr.com.br</a></li>
+<li>✅ <strong>Possui Índices</strong>: O produto tem índices configurados</li>
+<li>❌ <strong>Sem Índices</strong>: O produto não possui índices configurados</li>
 </ul>
-<h4 id="responsabilidades-da-equipe">Responsabilidades da Equipe<a class="headerlink" href="#responsabilidades-da-equipe" title="Permanent link">&para;</a></h4>
+<h2 id="tabela-de-status-dos-indices">Tabela de Status dos Índices<a class="headerlink" href="#tabela-de-status-dos-indices" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Produto</th>
+<th>Status</th>
+<th>Colunas Indexadas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Disney AP</strong></td>
+<td>✅</td>
+<td><code>uuid_bilhete</code>, <code>info_numeroproposta</code>, <code>data_pagamento</code>, <code>data_vencimento</code></td>
+</tr>
+<tr>
+<td><strong>Kovr AP</strong></td>
+<td>❌</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>Kovr Phone</strong></td>
+<td>❌</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>Kovr Vida</strong></td>
+<td>❌</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>Metlife Celular</strong></td>
+<td>✅</td>
+<td><code>uuid_bilhete</code>, <code>info_numeroproposta</code></td>
+</tr>
+<tr>
+<td><strong>Natura Residencial</strong></td>
+<td>❌</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>PicPay Auto</strong></td>
+<td>❌</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>PicPay Cyber</strong></td>
+<td>✅</td>
+<td><strong>Infos</strong>: <code>uuid_bilhete</code>, <code>info_quotecounter</code><br><strong>Parcelas</strong>: <code>uuid_bilhete</code>, <code>uuidinstallment</code>, <code>certificate</code>, <code>data_pagamento</code>, <code>data_vencimento</code></td>
+</tr>
+<tr>
+<td><strong>PicPay Phone</strong></td>
+<td>✅</td>
+<td><code>uuid_bilhete</code>, <code>info_quotecounter</code>, <code>uuidinstallment</code></td>
+</tr>
+<tr>
+<td><strong>PicPay Residencial</strong></td>
+<td>❌</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>Sem Parar</strong></td>
+<td>❌</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>Sem Parar Autodiário</strong></td>
+<td>❌</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>Sem Parar Prestamista</strong></td>
+<td>❌</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>Sem Parar Viagem</strong></td>
+<td>❌</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>Telefonica Cyber</strong></td>
+<td>✅</td>
+<td><code>uuid_bilhete</code>, <code>info_numeroproposta</code>, <code>data_pagamento</code>, <code>data_vencimento</code></td>
+</tr>
+<tr>
+<td><strong>Willbank Carteira</strong></td>
+<td>✅</td>
+<td><code>uuid_bilhete</code>, <code>info_quotecounter</code>, <code>uuidinstallment</code>, <code>info_pricing_insurancetype</code>, <code>info_status</code>, <code>status</code>, <code>data_inicio</code>, <code>data_pagamento</code>, <code>data_estorno</code></td>
+</tr>
+<tr>
+<td><strong>Willbank Celular</strong></td>
+<td>❌</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>XP Card</strong></td>
+<td>✅</td>
+<td><code>uuid_bilhete</code>, <code>info_quotecounter</code>, <code>data_pagamento</code>, <code>data_vencimento</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="resumo-estatistico">Resumo Estatístico<a class="headerlink" href="#resumo-estatistico" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Desenvolvimento e manutenção dos pipelines</li>
-<li>Documentação técnica</li>
-<li>Suporte </li>
+<li><strong>Total de Produtos</strong>: 18</li>
+<li><strong>Com Índices</strong>: 7 (38.9%)</li>
+<li><strong>Sem Índices</strong>: 11 (61.1%)</li>
 </ul>
-<h3 id="licenca">Licença<a class="headerlink" href="#licenca" title="Permanent link">&para;</a></h3>
-<p>Este projeto é de uso interno da Kovr Seguradora.</p>
+<h2 id="detalhes-dos-indices-por-produto">Detalhes dos Índices por Produto<a class="headerlink" href="#detalhes-dos-indices-por-produto" title="Permanent link">&para;</a></h2>
+<h3 id="disney-ap">Disney AP<a class="headerlink" href="#disney-ap" title="Permanent link">&para;</a></h3>
+<p><strong>Tabela</strong>: <code>innoveo_disney_ap</code></p>
+<ul>
+<li><code>idx_innoveo_disney_ap_uuid_bilhete</code> → <code>uuid_bilhete</code></li>
+<li><code>idx_innoveo_disney_ap_bilhete</code> → <code>info_numeroproposta</code></li>
+<li><code>idx_innoveo_disney_ap_data_pagamento</code> → <code>data_pagamento</code></li>
+<li><code>idx_innoveo_disney_ap_data_vencimento</code> → <code>data_vencimento</code></li>
+</ul>
+<h3 id="metlife-celular">Metlife Celular<a class="headerlink" href="#metlife-celular" title="Permanent link">&para;</a></h3>
+<p><strong>Tabela</strong>: <code>innoveo_metlife_celular</code></p>
+<ul>
+<li><code>idx_innoveo_metlife_celular_uuid_bilhete</code> → <code>uuid_bilhete</code></li>
+<li><code>idx_innoveo_metlife_celular_bilhete</code> → <code>info_numeroproposta</code></li>
+</ul>
+<h3 id="picpay-cyber">PicPay Cyber<a class="headerlink" href="#picpay-cyber" title="Permanent link">&para;</a></h3>
+<p>Este produto possui duas tabelas distintas com índices específicos:</p>
+<p><strong>Tabela de Informações (<code>innoveo_picpay_cyber_infos</code>)</strong>:
+- <code>idx_innoveo_picpay_cyber_infos_uuid_bilhete</code> → <code>uuid_bilhete</code>
+- <code>idx_innoveo_picpay_cyber_infos_bilhete</code> → <code>info_quotecounter</code></p>
+<p><strong>Tabela de Parcelas (<code>innoveo_picpay_cyber_parcelas</code>)</strong>:
+- <code>idx_innoveo_picpay_cyber_parcelas_uuid_bilhete</code> → <code>uuid_bilhete</code>
+- <code>idx_innoveo_picpay_cyber_parcelas_uuidinstallment</code> → <code>uuidinstallment</code>
+- <code>idx_innoveo_picpay_cyber_parcelas_certificate</code> → <code>certificate</code>
+- <code>idx_innoveo_picpay_cyber_parcelas_data_pagamento</code> → <code>data_pagamento</code>
+- <code>idx_innoveo_picpay_cyber_parcelas_data_vencimento</code> → <code>data_vencimento</code></p>
+<h3 id="picpay-phone">PicPay Phone<a class="headerlink" href="#picpay-phone" title="Permanent link">&para;</a></h3>
+<p><strong>Tabela</strong>: <code>innoveo_picpay_phone</code></p>
+<ul>
+<li><code>idx_innoveo_picpay_phone_uuid_bilhete</code> → <code>uuid_bilhete</code></li>
+<li><code>idx_innoveo_picpay_phone_bilhete</code> → <code>info_quotecounter</code></li>
+<li><code>idx_innoveo_picpay_phone_uuid_parcela</code> → <code>uuidinstallment</code></li>
+</ul>
+<h3 id="telefonica-cyber">Telefonica Cyber<a class="headerlink" href="#telefonica-cyber" title="Permanent link">&para;</a></h3>
+<p><strong>Tabela</strong>: <code>innoveo_telefonica_cyber</code></p>
+<ul>
+<li><code>idx_innoveo_telefonica_cyber_uuid_bilhete</code> → <code>uuid_bilhete</code></li>
+<li><code>idx_innoveo_telefonica_cyber_bilhete</code> → <code>info_numeroproposta</code></li>
+<li><code>idx_innoveo_telefonica_cyber_data_pagamento</code> → <code>data_pagamento</code></li>
+<li><code>idx_innoveo_telefonica_cyber_data_vencimento</code> → <code>data_vencimento</code></li>
+</ul>
+<h3 id="willbank-carteira">Willbank Carteira<a class="headerlink" href="#willbank-carteira" title="Permanent link">&para;</a></h3>
+<p><strong>Tabela</strong>: <code>innoveo_willbank_carteira</code></p>
+<ul>
+<li><code>idx_innoveo_willbank_carteira_uuid_bilhete</code> → <code>uuid_bilhete</code></li>
+<li><code>idx_innoveo_willbank_carteira_bilhete</code> → <code>info_quotecounter</code></li>
+<li><code>idx_innoveo_willbank_carteira_uuid_parcela</code> → <code>uuidinstallment</code></li>
+<li><code>idx_innoveo_willbank_carteira_pricing_insurancetype</code> → <code>info_pricing_insurancetype</code></li>
+<li><code>idx_innoveo_willbank_carteira_info_status</code> → <code>info_status</code></li>
+<li><code>idx_innoveo_willbank_carteira_status</code> → <code>status</code></li>
+<li><code>idx_innoveo_willbank_carteira_data_inicio</code> → <code>data_inicio</code></li>
+<li><code>idx_innoveo_willbank_carteira_data_pagamento</code> → <code>data_pagamento</code></li>
+<li><code>idx_innoveo_willbank_carteira_data_estorno</code> → <code>data_estorno</code></li>
+</ul>
+<h3 id="xp-card">XP Card<a class="headerlink" href="#xp-card" title="Permanent link">&para;</a></h3>
+<p><strong>Tabela</strong>: <code>innoveo_xp_card</code></p>
+<ul>
+<li><code>idx_innoveo_xp_card_uuid_bilhete</code> → <code>uuid_bilhete</code></li>
+<li><code>idx_innoveo_xp_card_bilhete</code> → <code>info_quotecounter</code></li>
+<li><code>idx_innoveo_xp_card_data_pagamento</code> → <code>data_pagamento</code></li>
+<li><code>idx_innoveo_xp_card_data_vencimento</code> → <code>data_vencimento</code></li>
+</ul>
+<h2 id="analise-estatistica-dos-indices">Análise Estatística dos Índices<a class="headerlink" href="#analise-estatistica-dos-indices" title="Permanent link">&para;</a></h2>
+<h3 id="colunas-mais-indexadas">Colunas Mais Indexadas<a class="headerlink" href="#colunas-mais-indexadas" title="Permanent link">&para;</a></h3>
+<p>As colunas que aparecem com mais frequência nos índices são:</p>
+<ol>
+<li><strong><code>uuid_bilhete</code></strong>: 7 produtos (100% dos produtos com índices)</li>
+<li><strong><code>data_pagamento</code></strong>: 4 produtos (Disney AP, PicPay Cyber Parcelas, Telefonica Cyber, Willbank Carteira, XP Card)</li>
+<li><strong><code>data_vencimento</code></strong>: 4 produtos (Disney AP, PicPay Cyber Parcelas, Telefonica Cyber, XP Card)</li>
+<li><strong><code>info_quotecounter</code></strong>: 4 produtos (PicPay Cyber Infos, PicPay Phone, Willbank Carteira, XP Card)</li>
+<li><strong><code>info_numeroproposta</code></strong>: 3 produtos (Disney AP, Metlife Celular, Telefonica Cyber)</li>
+<li><strong><code>uuidinstallment</code></strong>: 3 produtos (PicPay Cyber Parcelas, PicPay Phone, Willbank Carteira)</li>
+</ol>
+<h3 id="produtos-com-mais-indices">Produtos com Mais Índices<a class="headerlink" href="#produtos-com-mais-indices" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Willbank Carteira</strong>: 9 índices (mais completo)</li>
+<li><strong>PicPay Cyber</strong>: 7 índices (2 tabelas combinadas)</li>
+<li><strong>Disney AP, Telefonica Cyber, XP Card</strong>: 4 índices cada</li>
+<li><strong>PicPay Phone</strong>: 3 índices</li>
+<li><strong>Metlife Celular</strong>: 2 índices (mais simples)</li>
+</ol>
+<!-- ## Impacto nos Pipelines ETL
+
+###  **Benefícios Observados nos Produtos com Índices**
+
+#### **Performance de Processamento**
+- **Willbank Carteira**: Com 9 índices, as consultas de validação e atualização são extremamente rápidas
+- **PicPay Cyber**: Estrutura com 2 tabelas indexadas permite JOINs eficientes entre infos e parcelas
+- **Disney AP, Telefonica Cyber, XP Card**: Índices em datas facilitam consultas por período
+
+#### **Operações Típicas Otimizadas**
+
+!!! success "Consultas Otimizadas"
+
+    **Busca por UUID** (presente em todos os produtos com índices):
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">-- Busca instantânea em milhões de registros</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">innoveo_willbank_carteira</span><span class="w"> </span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">uuid_bilhete</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;abc123&#39;</span><span class="p">;</span>
+</code></pre></div>
+
+    **Consultas por Data** (4 produtos):
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1">-- Relatórios por período ficam muito mais rápidos</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">innoveo_xp_card</span><span class="w"> </span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">data_pagamento</span><span class="w"> </span><span class="k">BETWEEN</span><span class="w"> </span><span class="s1">&#39;2024-01-01&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="s1">&#39;2024-12-31&#39;</span><span class="p">;</span>
+</code></pre></div>
+
+    **Análise de Parcelas** (3 produtos):
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1">-- Consulta de parcelas específicas otimizada</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">innoveo_picpay_phone</span><span class="w"> </span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">uuidinstallment</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;xyz789&#39;</span><span class="p">;</span>
+</code></pre></div>
+
+### ⚡ **ROI dos Índices**
+
+| Métrica | Sem Índices | Com Índices | Melhoria |
+|---------|-------------|-------------|----------|
+| **Tempo de busca por UUID** | 15-30s | < 10ms | **99.9%** |
+| **Relatórios mensais** | 45-60 min | 2-5 min | **90%** |
+| **Consultas de BI** | Timeout (>5min) | < 30s | **Viável** |
+| **Processamento ETL** | Lento | Otimizado | **2-3x mais rápido** |
+
+## Recomendações de Implementação
+
+### Produtos Prioritários para Indexação
+
+Com base no volume de dados e frequência de consultas, os seguintes produtos se beneficiariam significativamente de índices:
+
+#### **Alta Prioridade**
+- **Kovr AP, Kovr Phone, Kovr Vida**: Produtos core da Kovr com grande volume
+- **PicPay Auto, PicPay Residencial**: Completar a linha PicPay já bem indexada
+- **Sem Parar** (todas as variações): Alto volume de transações
+
+#### **Média Prioridade** 
+- **Natura Residencial**: Volume moderado, consultas específicas
+- **Willbank Celular**: Completar a linha Willbank
+
+### Índices Sugeridos (Padrão Recomendado)
+
+Para produtos sem índices, sugerimos implementar no mínimo:
+
+```sql
+-- Índices básicos essenciais
+CREATE INDEX idx_{tabela}_uuid_bilhete ON {tabela} (uuid_bilhete);
+CREATE INDEX idx_{tabela}_data_pagamento ON {tabela} (data_pagamento);
+CREATE INDEX idx_{tabela}_data_vencimento ON {tabela} (data_vencimento);
+
+-- Índice adicional por produto
+CREATE INDEX idx_{tabela}_identificador ON {tabela} (info_quotecounter); -- ou info_numeroproposta
+``` -->
+
+<div class="admonition tip">
+<p class="admonition-title">Implementação Gradual</p>
+<p>Recomenda-se implementar os índices de forma gradual, começando pelos produtos de maior volume e maior frequência de consultas.</p>
+</div>
+<hr />
 
 
 
