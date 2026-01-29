@@ -12,13 +12,13 @@
         <meta name="author" content="Equipe de Dados Kovr">
       
       
-        <link rel="canonical" href="https://kovrseguradorabi.github.io/PIPELINES_MONGODB/produtos/disney_ap/">
+        <link rel="canonical" href="https://kovrseguradorabi.github.io/PIPELINES_MONGODB/produtos/banco_fitness/">
       
       
-        <link rel="prev" href="../banco_fitness/">
+        <link rel="prev" href="../..">
       
       
-        <link rel="next" href="../kovr_ap/">
+        <link rel="next" href="../disney_ap/">
       
       
       <link rel="icon" href="../../assets/logo.svg">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Disney AP - PIPELINES MONGODB</title>
+        <title>Banco Fitness - PIPELINES MONGODB</title>
       
     
     
@@ -84,7 +84,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#disney-ap" class="md-skip">
+        <a href="#banco-fitness" class="md-skip">
           Ir para o conteúdo
         </a>
       
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Disney AP
+              Banco Fitness
             
           </span>
         </div>
@@ -258,7 +258,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../banco_fitness/" class="md-tabs__link">
+        <a href="./" class="md-tabs__link">
           
   
   
@@ -426,29 +426,6 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../banco_fitness/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Banco Fitness
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -466,7 +443,7 @@
   
   
   <span class="md-ellipsis">
-    Disney AP
+    Banco Fitness
     
   </span>
   
@@ -479,7 +456,7 @@
   
   
   <span class="md-ellipsis">
-    Disney AP
+    Banco Fitness
     
   </span>
   
@@ -628,6 +605,29 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../disney_ap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Disney AP
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1335,23 +1335,32 @@
   
 
 
-<h1 id="disney-ap">Disney AP<a class="headerlink" href="#disney-ap" title="Permanent link">&para;</a></h1>
+<h1 id="banco-fitness">Banco Fitness<a class="headerlink" href="#banco-fitness" title="Permanent link">&para;</a></h1>
 <h2 id="visao-geral">Visão Geral<a class="headerlink" href="#visao-geral" title="Permanent link">&para;</a></h2>
-<p>O produto Disney AP extrai dados de duas collections no MongoDB específicas para seguros Disney, aplica transformações especializadas (incluindo dados Disney específicos) e carrega em duas tabelas PostgreSQL separadas.</p>
+<p>O produto Banco Fitness extrai dados de duas collections no MongoDB específicas para seguros fitness, aplica transformações especializadas e carrega em duas tabelas PostgreSQL separadas.</p>
 <h3 id="especificacoes">Especificações<a class="headerlink" href="#especificacoes" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>Fonte:</strong> MongoDB (produção)  </li>
-<li><strong>Collections:</strong> <code>implementations.disneyap</code> (implementação) e <code>implementations.pppbaseparcelas</code> (parcelas)</li>
+<li><strong>Collections:</strong> <code>implementations.bancofitness</code> (implementação) e <code>implementations.bancofitnessparcelas</code> (parcelas)</li>
 <li><strong>Destino:</strong> Duas Tabelas PostgreSQL</li>
-<li><strong>Tabela Infos:</strong> <code>innoveo_disney_ap_infos</code> (dados da implementação)</li>
-<li><strong>Tabela Parcelas:</strong> <code>innoveo_disney_ap_parcelas</code> (dados de parcelamento)</li>
+<li><strong>Tabela Infos:</strong> <code>innoveo_banco_fitness_infos</code> (dados da implementação)</li>
+<li><strong>Tabela Parcelas:</strong> <code>innoveo_banco_fitness_parcelas</code> (dados de parcelamento)</li>
 </ul>
 <h3 id="singularidades">Singularidades<a class="headerlink" href="#singularidades" title="Permanent link">&para;</a></h3>
-<div class="admonition warning">
-<p class="admonition-title">Especificidades do Seguro Disney</p>
+<div class="admonition info">
+<p class="admonition-title">Características Específicas Banco Fitness</p>
 <ul>
-<li><strong>Schemas duplos:</strong> <code>SchemaDisneyAPInfos</code> e <code>SchemaKovrDisneyInfosParcelas</code> para validação independente</li>
+<li><strong>Duas tabelas de destino:</strong> <code>innoveo_banco_fitness_infos</code> (5 índices) e <code>innoveo_banco_fitness_parcelas</code> (7 índices)</li>
+<li><strong>Processamento independente:</strong> duas collections processadas separadamente sem operações de merge</li>
+<li><strong>Campos de capitalização:</strong> LuckNumber, LuckNumberFormated, LuckNumberSerie</li>
+</ul>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Especificidades do Seguro Banco Fitness</p>
+<ul>
+<li><strong>Schemas duplos:</strong> <code>SchemaBancoFitnessInfos</code> e <code>SchemaBancoFitnessParcelas</code> para validação independente</li>
 <li><strong>Gerenciamento índices:</strong> Criação e remoção automática de índices durante processamento TRUNCATE</li>
+<li><strong>Campos de comissão:</strong> Comissao, ComissaoAgencia, ComissaoCorretor, PercComissao</li>
 <li><strong>Paths separados:</strong> <code>PATH_STAGE_INFOS</code> e <code>PATH_STAGE_PARCELAS</code> para processamento independente</li>
 </ul>
 </div>
@@ -1359,13 +1368,13 @@
 <h3 id="configuracao-de-indices-separados">Configuração de Índices Separados<a class="headerlink" href="#configuracao-de-indices-separados" title="Permanent link">&para;</a></h3>
 <p><strong>Total de 12 índices distribuídos entre duas tabelas:</strong></p>
 <details class="example">
-<summary>Configuração de índices em pipeline_disney_ap_funcoes.py</summary>
+<summary>Configuração de índices em pipeline_banco_fitness_funcoes.py</summary>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Índices para tabela de infos (5 índices)</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">INDEX_TABELA_BANCO_INFOS</span> <span class="o">=</span> <span class="p">{</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="sa">f</span><span class="s1">&#39;idx_</span><span class="si">{</span><span class="n">NM_TABELA_BANCO_INFOS</span><span class="si">}</span><span class="s1">_uuid_bilhete&#39;</span><span class="p">:</span> <span class="s1">&#39;uuid_bilhete&#39;</span><span class="p">,</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    <span class="sa">f</span><span class="s1">&#39;idx_</span><span class="si">{</span><span class="n">NM_TABELA_BANCO_INFOS</span><span class="si">}</span><span class="s1">_bilhete&#39;</span><span class="p">:</span> <span class="s1">&#39;info_numeroproposta&#39;</span><span class="p">,</span>
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="sa">f</span><span class="s1">&#39;idx_</span><span class="si">{</span><span class="n">NM_TABELA_BANCO_INFOS</span><span class="si">}</span><span class="s1">_uuid_parcela&#39;</span><span class="p">:</span> <span class="s1">&#39;uuid_parcela&#39;</span><span class="p">,</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="sa">f</span><span class="s1">&#39;idx_</span><span class="si">{</span><span class="n">NM_TABELA_BANCO_INFOS</span><span class="si">}</span><span class="s1">_data_inicio&#39;</span><span class="p">:</span> <span class="s1">&#39;data_inicio_vigencia&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="sa">f</span><span class="s1">&#39;idx_</span><span class="si">{</span><span class="n">NM_TABELA_BANCO_INFOS</span><span class="si">}</span><span class="s1">_data_inicio&#39;</span><span class="p">:</span> <span class="s1">&#39;data_inicio&#39;</span><span class="p">,</span>
 <a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="sa">f</span><span class="s1">&#39;idx_</span><span class="si">{</span><span class="n">NM_TABELA_BANCO_INFOS</span><span class="si">}</span><span class="s1">_data_cancelamento&#39;</span><span class="p">:</span> <span class="s1">&#39;data_cancelamento&#39;</span>
 <a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="p">}</span>
 <a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
@@ -1383,7 +1392,7 @@
 </details>
 <h2 id="schemas-de-validacao">Schemas de Validação<a class="headerlink" href="#schemas-de-validacao" title="Permanent link">&para;</a></h2>
 <h3 id="schema-para-tabela-infos">Schema para Tabela Infos<a class="headerlink" href="#schema-para-tabela-infos" title="Permanent link">&para;</a></h3>
-<p><strong><code>SchemaDisneyAPInfos</code></strong> - Validação dos dados de implementação:</p>
+<p><strong><code>SchemaBancoFitnessInfos</code></strong> - Validação dos dados de implementação:</p>
 <table>
 <thead>
 <tr>
@@ -1406,12 +1415,7 @@
 <tr>
 <td><code>info_numeroproposta</code></td>
 <td><code>str</code></td>
-<td>Número da proposta Disney</td>
-</tr>
-<tr>
-<td><code>info_dadoscliente_beneficiarios</code></td>
-<td><code>str</code></td>
-<td>Dados JSON de beneficiários</td>
+<td>Número da proposta</td>
 </tr>
 <tr>
 <td><code>data_inicio_vigencia</code></td>
@@ -1431,7 +1435,7 @@
 </tbody>
 </table>
 <h3 id="schema-para-tabela-parcelas">Schema para Tabela Parcelas<a class="headerlink" href="#schema-para-tabela-parcelas" title="Permanent link">&para;</a></h3>
-<p><strong><code>SchemaKovrDisneyInfosParcelas</code></strong> - Validação dos dados de parcelamento:</p>
+<p><strong><code>SchemaBancoFitnessParcelas</code></strong> - Validação dos dados de parcelamento:</p>
 <table>
 <thead>
 <tr>
@@ -1450,11 +1454,6 @@
 <td><code>uuid_parcela</code></td>
 <td><code>str</code></td>
 <td>UUID da parcela</td>
-</tr>
-<tr>
-<td><code>produtouuid</code></td>
-<td><code>str</code></td>
-<td>UUID do produto Disney</td>
 </tr>
 <tr>
 <td><code>numero</code></td>
@@ -1491,13 +1490,13 @@
 <h2 id="configuracoes-tecnicas">Configurações Técnicas<a class="headerlink" href="#configuracoes-tecnicas" title="Permanent link">&para;</a></h2>
 <h3 id="collections-mongodb">Collections MongoDB<a class="headerlink" href="#collections-mongodb" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>Implementação:</strong> <code>implementations.disneyap</code></li>
-<li><strong>Parcelas:</strong> <code>implementations.pppbaseparcelas</code></li>
+<li><strong>Implementação:</strong> <code>implementations.bancofitness</code></li>
+<li><strong>Parcelas:</strong> <code>implementations.bancofitnessparcelas</code></li>
 </ul>
 <h3 id="tabelas-postgresql-de-destino">Tabelas PostgreSQL de Destino<a class="headerlink" href="#tabelas-postgresql-de-destino" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>Infos:</strong> <code>innoveo_disney_ap_infos</code> (5 índices)</li>
-<li><strong>Parcelas:</strong> <code>innoveo_disney_ap_parcelas</code> (7 índices)</li>
+<li><strong>Infos:</strong> <code>innoveo_banco_fitness_infos</code> (5 índices)</li>
+<li><strong>Parcelas:</strong> <code>innoveo_banco_fitness_parcelas</code> (7 índices)</li>
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Processamento Independente</p>
@@ -1523,7 +1522,7 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="25 de setembro de 2025 20:46:02 UTC">25 de setembro de 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="29 de janeiro de 2026 19:27:21 UTC">29 de janeiro de 2026</span>
   </span>
 
     
