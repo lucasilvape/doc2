@@ -1438,24 +1438,72 @@
 <p><strong>1. Clone o repositório:</strong></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#index-__codelineno-0-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/KovrSeguradoraBI/PIPELINES_MONGODB.git
 </code></pre></div>
-<ol>
-<li>Entre na pasta e instale dependências (Poetry):</li>
-</ol>
+<p><strong>2. Entre na pasta:</strong></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#index-__codelineno-1-1"></a><span class="nb">cd</span><span class="w"> </span>PIPELINES_MONGODB
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#index-__codelineno-1-2"></a>poetry<span class="w"> </span>install
 </code></pre></div>
-<p>(opcional) criar venv dentro do projeto:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#index-__codelineno-2-1"></a>poetry<span class="w"> </span>config<span class="w"> </span>virtualenvs.in-project<span class="w"> </span><span class="nb">true</span>
+<p><strong>3. Crie o arquivo <code>.env</code> na raiz do projeto:</strong></p>
+<div class="admonition danger">
+<p class="admonition-title">Obrigatório</p>
+<p>O arquivo <code>.env</code> é <strong>obrigatório</strong> para a execução dos pipelines. Sem ele, as conexões com MongoDB e PostgreSQL não funcionarão.</p>
+</div>
+<p>Copie o arquivo de exemplo:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#index-__codelineno-2-1"></a>cp<span class="w"> </span>.env_exemplo<span class="w"> </span>.env
 </code></pre></div>
-<ol>
-<li>
-<p>Ajuste variáveis de ambiente conforme <code>.env.example</code>.</p>
-</li>
-<li>
-<p>Exemplo de execução (modo <code>DINAMICO</code>):</p>
-</li>
-</ol>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#index-__codelineno-3-1"></a>poetry<span class="w"> </span>run<span class="w"> </span>python<span class="w"> </span>main_&lt;produto&gt;.py<span class="w"> </span>--tp_atualizacao<span class="w"> </span>DINAMICO
+<p>O arquivo <code>.env_exemplo</code> serve como modelo — substitua os <code>***</code> pelas credenciais reais:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="index-__tabbed_1_1" name="index-__tabbed_1" type="radio" /><input id="index-__tabbed_1_2" name="index-__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="index-__tabbed_1_1"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zm4 18H6V4h7v5h5z"/></svg></span> Modelo (<code>.env_exemplo</code>)</label><label for="index-__tabbed_1_2"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg></span> Preenchido (<code>.env</code>)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#index-__codelineno-3-1"></a><span class="nv">user_mongo_prod</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;***&#39;</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#index-__codelineno-3-2"></a><span class="nv">password_mongo_prod</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;***&#39;</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#index-__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#index-__codelineno-3-4"></a><span class="nv">user_mongo_homolog</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;***&#39;</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#index-__codelineno-3-5"></a><span class="nv">password_mongo_homolog</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;***&#39;</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#index-__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#index-__codelineno-3-7"></a>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#index-__codelineno-3-8"></a><span class="nv">PG_HOST</span><span class="o">=</span><span class="s1">&#39;***&#39;</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#index-__codelineno-3-9"></a><span class="nv">PG_PORT</span><span class="o">=</span><span class="s1">&#39;***&#39;</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#index-__codelineno-3-10"></a><span class="nv">PG_DB</span><span class="o">=</span><span class="s1">&#39;***&#39;</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#index-__codelineno-3-11"></a><span class="nv">PG_USER</span><span class="o">=</span><span class="s1">&#39;***&#39;</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#index-__codelineno-3-12"></a><span class="nv">PG_PASSWORD</span><span class="o">=</span><span class="s1">&#39;***&#39;</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#index-__codelineno-3-13"></a>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#index-__codelineno-3-14"></a><span class="nv">PG_HOMOLOG_HOST</span><span class="o">=</span><span class="s1">&#39;***&#39;</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#index-__codelineno-3-15"></a><span class="nv">PG_HOMOLOG_PORT</span><span class="o">=</span><span class="s1">&#39;***&#39;</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#index-__codelineno-3-16"></a><span class="nv">PG_HOMOLOG_DB</span><span class="o">=</span><span class="s1">&#39;***&#39;</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#index-__codelineno-3-17"></a><span class="nv">PG_HOMOLOG_USER</span><span class="o">=</span><span class="s1">&#39;***&#39;</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#index-__codelineno-3-18"></a><span class="nv">PG_HOMOLOG_PASSWORD</span><span class="o">=</span><span class="s1">&#39;***&#39;</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#index-__codelineno-4-1"></a><span class="nv">user_mongo_prod</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;seu_usuario&#39;</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#index-__codelineno-4-2"></a><span class="nv">password_mongo_prod</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;sua_senha&#39;</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#index-__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#index-__codelineno-4-4"></a><span class="nv">user_mongo_homolog</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;seu_usuario&#39;</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#index-__codelineno-4-5"></a><span class="nv">password_mongo_homolog</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;sua_senha&#39;</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#index-__codelineno-4-6"></a>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#index-__codelineno-4-7"></a>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#index-__codelineno-4-8"></a><span class="nv">PG_HOST</span><span class="o">=</span><span class="s1">&#39;seu_host&#39;</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#index-__codelineno-4-9"></a><span class="nv">PG_PORT</span><span class="o">=</span><span class="s1">&#39;5432&#39;</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#index-__codelineno-4-10"></a><span class="nv">PG_DB</span><span class="o">=</span><span class="s1">&#39;seu_banco&#39;</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#index-__codelineno-4-11"></a><span class="nv">PG_USER</span><span class="o">=</span><span class="s1">&#39;seu_usuario&#39;</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#index-__codelineno-4-12"></a><span class="nv">PG_PASSWORD</span><span class="o">=</span><span class="s1">&#39;sua_senha&#39;</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#index-__codelineno-4-13"></a>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#index-__codelineno-4-14"></a><span class="nv">PG_HOMOLOG_HOST</span><span class="o">=</span><span class="s1">&#39;seu_host&#39;</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#index-__codelineno-4-15"></a><span class="nv">PG_HOMOLOG_PORT</span><span class="o">=</span><span class="s1">&#39;5432&#39;</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#index-__codelineno-4-16"></a><span class="nv">PG_HOMOLOG_DB</span><span class="o">=</span><span class="s1">&#39;seu_banco&#39;</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#index-__codelineno-4-17"></a><span class="nv">PG_HOMOLOG_USER</span><span class="o">=</span><span class="s1">&#39;seu_usuario&#39;</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#index-__codelineno-4-18"></a><span class="nv">PG_HOMOLOG_PASSWORD</span><span class="o">=</span><span class="s1">&#39;sua_senha&#39;</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<p><strong>4. Instale as dependências (Poetry):</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#index-__codelineno-5-1"></a>poetry<span class="w"> </span>install
+</code></pre></div>
+<p>(obrigatório) criar venv dentro do projeto:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#index-__codelineno-6-1"></a>poetry<span class="w"> </span>config<span class="w"> </span>virtualenvs.in-project<span class="w"> </span><span class="nb">true</span>
+</code></pre></div>
+<p><strong>5. Exemplo de execução (modo <code>DINAMICO</code>):</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#index-__codelineno-7-1"></a>poetry<span class="w"> </span>run<span class="w"> </span>python<span class="w"> </span>main_&lt;produto&gt;.py<span class="w"> </span>--tp_atualizacao<span class="w"> </span>DINAMICO
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Observação</p>
@@ -1470,43 +1518,43 @@ Esta documentação e construída com MkDocs. Para visualizar, editar ou contrib
 ### :material-console: Comandos Básicos
 
 1. **Instalar dependências** (se ainda não tiver feito):
-   <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#index-__codelineno-4-1"></a>pip<span class="w"> </span>install<span class="w"> </span>mkdocs-material<span class="w"> </span>mkdocs-git-revision-date-localized-plugin<span class="w"> </span>mkdocs-print-site-plugin
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#index-__codelineno-8-1"></a>pip<span class="w"> </span>install<span class="w"> </span>mkdocs-material<span class="w"> </span>mkdocs-git-revision-date-localized-plugin<span class="w"> </span>mkdocs-print-site-plugin
 </code></pre></div>
 
 2. **Servir a documentação localmente** (modo desenvolvimento):
-   <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#index-__codelineno-5-1"></a>mkdocs<span class="w"> </span>serve
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#index-__codelineno-9-1"></a>mkdocs<span class="w"> </span>serve
 </code></pre></div>
 
    Acesse em: `http://127.0.0.1:8000`
 
 3. **Servir em porta específica**:
-   <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#index-__codelineno-6-1"></a>mkdocs<span class="w"> </span>serve<span class="w"> </span>--dev-addr<span class="o">=</span><span class="m">127</span>.0.0.1:8001
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#index-__codelineno-10-1"></a>mkdocs<span class="w"> </span>serve<span class="w"> </span>--dev-addr<span class="o">=</span><span class="m">127</span>.0.0.1:8001
 </code></pre></div>
 
 4. **Build para produção**:
-   <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#index-__codelineno-7-1"></a>mkdocs<span class="w"> </span>build
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#index-__codelineno-11-1"></a>mkdocs<span class="w"> </span>build
 </code></pre></div>
 
    Gera os arquivos estáticos na pasta `site/`
 
 5. **Deploy para GitHub Pages**:
-   <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#index-__codelineno-8-1"></a>mkdocs<span class="w"> </span>gh-deploy
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#index-__codelineno-12-1"></a>mkdocs<span class="w"> </span>gh-deploy
 </code></pre></div>
 
 ### :material-folder-outline: Estrutura da Documentação
 
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#index-__codelineno-9-1"></a>docs/
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#index-__codelineno-9-2"></a>├── index.md              # Página inicial
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#index-__codelineno-9-3"></a>├── ferramentas.md        # Documentação das ferramentas
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#index-__codelineno-9-4"></a>├── sobre.md              # Informações gerais
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#index-__codelineno-9-5"></a>├── produtos/             # Documentação específica por produto
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#index-__codelineno-9-6"></a>│   ├── disney_ap.md
-<a id="__codelineno-9-7" name="__codelineno-9-7" href="#index-__codelineno-9-7"></a>│   ├── kovr_ap.md
-<a id="__codelineno-9-8" name="__codelineno-9-8" href="#index-__codelineno-9-8"></a>│   └── ...
-<a id="__codelineno-9-9" name="__codelineno-9-9" href="#index-__codelineno-9-9"></a>└── assets/               # Recursos (imagens, CSS, etc.)
-<a id="__codelineno-9-10" name="__codelineno-9-10" href="#index-__codelineno-9-10"></a>    ├── images/
-<a id="__codelineno-9-11" name="__codelineno-9-11" href="#index-__codelineno-9-11"></a>    ├── custom.css
-<a id="__codelineno-9-12" name="__codelineno-9-12" href="#index-__codelineno-9-12"></a>    └── logo.svg
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#index-__codelineno-13-1"></a>docs/
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#index-__codelineno-13-2"></a>├── index.md              # Página inicial
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#index-__codelineno-13-3"></a>├── ferramentas.md        # Documentação das ferramentas
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#index-__codelineno-13-4"></a>├── sobre.md              # Informações gerais
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#index-__codelineno-13-5"></a>├── produtos/             # Documentação específica por produto
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#index-__codelineno-13-6"></a>│   ├── disney_ap.md
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#index-__codelineno-13-7"></a>│   ├── kovr_ap.md
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#index-__codelineno-13-8"></a>│   └── ...
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#index-__codelineno-13-9"></a>└── assets/               # Recursos (imagens, CSS, etc.)
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#index-__codelineno-13-10"></a>    ├── images/
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#index-__codelineno-13-11"></a>    ├── custom.css
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#index-__codelineno-13-12"></a>    └── logo.svg
 </code></pre></div>
 
 ### :material-pencil: Editando a Documentação
@@ -1530,7 +1578,7 @@ Esta documentação e construída com MkDocs. Para visualizar, editar ou contrib
 <li><strong>Destino:</strong> Tabela Postgres específica por produto</li>
 </ul>
 <h3 id="index-colunas-criticas-universais"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 14c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2m5.6-4c-.8-2.3-3-4-5.6-4-3.3 0-6 2.7-6 6s2.7 6 6 6c2.6 0 4.8-1.7 5.6-4H16v4h4v-4h3v-4z"/></svg></span> Colunas Criticas Universais<a class="headerlink" href="#index-colunas-criticas-universais" title="Permanent link">&para;</a></h3>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="index-__tabbed_1_1" name="index-__tabbed_1" type="radio" /><input id="index-__tabbed_1_2" name="index-__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="index-__tabbed_1_1">Todos os Produtos</label><label for="index-__tabbed_1_2">Produtos com Parcelas</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="index-__tabbed_2_1" name="index-__tabbed_2" type="radio" /><input id="index-__tabbed_2_2" name="index-__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="index-__tabbed_2_1">Todos os Produtos</label><label for="index-__tabbed_2_2">Produtos com Parcelas</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <table>
@@ -1681,7 +1729,7 @@ Esta documentação e construída com MkDocs. Para visualizar, editar ou contrib
 <div class="admonition tip">
 <p class="admonition-title"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.68 12.32a4.49 4.49 0 0 0-6.36.01 4.49 4.49 0 0 0 0 6.36 4.51 4.51 0 0 0 5.57.63L21 22.39 22.39 21l-3.09-3.11c1.13-1.77.87-4.09-.62-5.57m-1.41 4.95c-.98.98-2.56.97-3.54 0-.97-.98-.97-2.56.01-3.54.97-.97 2.55-.97 3.53 0 .97.98.97 2.56 0 3.54M10.9 20.1a6.5 6.5 0 0 1-1.48-2.32C6.27 17.25 4 15.76 4 14v3c0 2.21 3.58 4 8 4-.4-.26-.77-.56-1.1-.9M4 9v3c0 1.68 2.07 3.12 5 3.7v-.2c0-.93.2-1.85.58-2.69C6.34 12.3 4 10.79 4 9m8-6C7.58 3 4 4.79 4 7c0 2 3 3.68 6.85 4h.05c1.2-1.26 2.86-2 4.6-2 .91 0 1.81.19 2.64.56A3.22 3.22 0 0 0 20 7c0-2.21-3.58-4-8-4"/></svg></span> Geração de Base (<code>gerar_base_para_busca</code>)</p>
 <p>Filtra bilhetes por data de criação com dias retroativos configuráveis.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:4"><input checked="checked" id="index-__tabbed_2_1" name="index-__tabbed_2" type="radio" /><input id="index-__tabbed_2_2" name="index-__tabbed_2" type="radio" /><input id="index-__tabbed_2_3" name="index-__tabbed_2" type="radio" /><input id="index-__tabbed_2_4" name="index-__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="index-__tabbed_2_1"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 10h5v5H7m12 4H5V8h14m0-5h-1V1h-2v2H8V1H6v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2"/></svg></span> DIARIO</label><label for="index-__tabbed_2_2"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7.77 18.39 18H5.61zM12 4 2 20h20"/></svg></span> INCREMENTAL</label><label for="index-__tabbed_2_3"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3c4.42 0 8 1.79 8 4s-3.58 4-8 4-8-1.79-8-4 3.58-4 8-4M4 9c0 2.21 3.58 4 8 4 1.11 0 2.18-.11 3.14-.32-.95.86-1.64 1.99-1.96 3.28L12 16c-4.42 0-8-1.79-8-4zm16 0v2h-.5l-.6.03c.7-.6 1.1-1.29 1.1-2.03M4 14c0 2.21 3.58 4 8 4l1-.03c.09 1.06.42 2.03.95 2.91L12 21c-4.42 0-8-1.79-8-4zm15-.5c1.11 0 2.11.45 2.83 1.17L23 13.5v4h-4l1.77-1.77A2.5 2.5 0 1 0 21 19h1.71A3.99 3.99 0 0 1 19 21.5c-2.21 0-4-1.79-4-4s1.79-4 4-4"/></svg></span> FULL</label><label for="index-__tabbed_2_4"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.5 5.6 5 7l1.4-2.5L5 2l2.5 1.4L10 2 8.6 4.5 10 7zm12 9.8L22 14l-1.4 2.5L22 19l-2.5-1.4L17 19l1.4-2.5L17 14zM22 2l-1.4 2.5L22 7l-2.5-1.4L17 7l1.4-2.5L17 2l2.5 1.4zm-8.66 10.78 2.44-2.44-2.12-2.12-2.44 2.44zm1.03-5.49 2.34 2.34c.39.37.39 1.02 0 1.41L5.04 22.71c-.39.39-1.04.39-1.41 0l-2.34-2.34c-.39-.37-.39-1.02 0-1.41L12.96 7.29c.39-.39 1.04-.39 1.41 0"/></svg></span> DINAMICO</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:4"><input checked="checked" id="index-__tabbed_3_1" name="index-__tabbed_3" type="radio" /><input id="index-__tabbed_3_2" name="index-__tabbed_3" type="radio" /><input id="index-__tabbed_3_3" name="index-__tabbed_3" type="radio" /><input id="index-__tabbed_3_4" name="index-__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="index-__tabbed_3_1"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 10h5v5H7m12 4H5V8h14m0-5h-1V1h-2v2H8V1H6v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2"/></svg></span> DIARIO</label><label for="index-__tabbed_3_2"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7.77 18.39 18H5.61zM12 4 2 20h20"/></svg></span> INCREMENTAL</label><label for="index-__tabbed_3_3"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3c4.42 0 8 1.79 8 4s-3.58 4-8 4-8-1.79-8-4 3.58-4 8-4M4 9c0 2.21 3.58 4 8 4 1.11 0 2.18-.11 3.14-.32-.95.86-1.64 1.99-1.96 3.28L12 16c-4.42 0-8-1.79-8-4zm16 0v2h-.5l-.6.03c.7-.6 1.1-1.29 1.1-2.03M4 14c0 2.21 3.58 4 8 4l1-.03c.09 1.06.42 2.03.95 2.91L12 21c-4.42 0-8-1.79-8-4zm15-.5c1.11 0 2.11.45 2.83 1.17L23 13.5v4h-4l1.77-1.77A2.5 2.5 0 1 0 21 19h1.71A3.99 3.99 0 0 1 19 21.5c-2.21 0-4-1.79-4-4s1.79-4 4-4"/></svg></span> FULL</label><label for="index-__tabbed_3_4"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.5 5.6 5 7l1.4-2.5L5 2l2.5 1.4L10 2 8.6 4.5 10 7zm12 9.8L22 14l-1.4 2.5L22 19l-2.5-1.4L17 19l1.4-2.5L17 14zM22 2l-1.4 2.5L22 7l-2.5-1.4L17 7l1.4-2.5L17 2l2.5 1.4zm-8.66 10.78 2.44-2.44-2.12-2.12-2.44 2.44zm1.03-5.49 2.34 2.34c.39.37.39 1.02 0 1.41L5.04 22.71c-.39.39-1.04.39-1.41 0l-2.34-2.34c-.39-.37-.39-1.02 0-1.41L12.96 7.29c.39-.39 1.04-.39 1.41 0"/></svg></span> DINAMICO</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Processa bilhetes de uma data especifica (formato <code>yyyy-mm-dd</code>)</p>
@@ -1754,10 +1802,15 @@ Esta documentação e construída com MkDocs. Para visualizar, editar ou contrib
     S3 --&gt; S["PostgreSQL COPY&lt;br/&gt;innoveo_produto_parcelas"]
     S4 --&gt; S
 
-    R --&gt; T["Criar Indices Infos"]
-    S --&gt; U["Criar Indices Parcelas"]
+    R --&gt; T2{"FULL?"}
+    S --&gt; U2{"FULL?"}
 
-    T --&gt; V["Pipeline Concluído"]
+    T2 --&gt;|Sim| T["Criar Indices Infos"]
+    T2 --&gt;|Nao| V["Pipeline Concluído"]
+    U2 --&gt;|Sim| U["Criar Indices Parcelas"]
+    U2 --&gt;|Nao| V
+
+    T --&gt; V
     U --&gt; V
 
     %% Estilos do diagrama
@@ -1790,7 +1843,9 @@ Esta documentação e construída com MkDocs. Para visualizar, editar ou contrib
     style R fill:#66BB6A,stroke:#43A047,stroke-width:2px,color:#ffffff
     style S fill:#66BB6A,stroke:#43A047,stroke-width:2px,color:#ffffff
     style T fill:#AB47BC,stroke:#8E24AA,stroke-width:2px,color:#ffffff
+    style T2 fill:#FFA726,stroke:#FB8C00,stroke-width:2px,color:#ffffff
     style U fill:#AB47BC,stroke:#8E24AA,stroke-width:2px,color:#ffffff
+    style U2 fill:#FFA726,stroke:#FB8C00,stroke-width:2px,color:#ffffff
     style V fill:#4CAF50,stroke:#2E7D32,stroke-width:3px,color:#ffffff
 </code></pre>
 <p><strong>Legenda do Fluxo:</strong></p>
@@ -1874,34 +1929,34 @@ Esta documentação e construída com MkDocs. Para visualizar, editar ou contrib
 </details>
 <h3 id="index-estrutura-de-arquivos-por-produto"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 4h-8l-2-2H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2M2 6H0v14a2 2 0 0 0 2 2h18v-2H2z"/></svg></span> Estrutura de Arquivos por Produto<a class="headerlink" href="#index-estrutura-de-arquivos-por-produto" title="Permanent link">&para;</a></h3>
 <p>Cada produto segue a mesma estrutura de arquivos:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#index-__codelineno-10-1"></a>produto/
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#index-__codelineno-10-2"></a>├── main_produto.py                     # Orquestração principal
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#index-__codelineno-10-3"></a>├── pipeline_produto_funcoes.py         # Lógica de negócio e transformações
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#index-__codelineno-10-4"></a>└── pipeline_produto_notebook.ipynb     # Notebook para desenvolvimento e testes
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#index-__codelineno-14-1"></a>produto/
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#index-__codelineno-14-2"></a>├── main_produto.py                     # Orquestração principal
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#index-__codelineno-14-3"></a>├── pipeline_produto_funcoes.py         # Lógica de negócio e transformações
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#index-__codelineno-14-4"></a>└── pipeline_produto_notebook.ipynb     # Notebook para desenvolvimento e testes
 </code></pre></div>
 <h3 id="index-configuracoes-padrao"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 15.5A3.5 3.5 0 0 1 8.5 12 3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5 3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97s-.03-.66-.07-1l2.11-1.63c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.31-.61-.22l-2.49 1c-.52-.39-1.06-.73-1.69-.98l-.37-2.65A.506.506 0 0 0 14 2h-4c-.25 0-.46.18-.5.42l-.37 2.65c-.63.25-1.17.59-1.69.98l-2.49-1c-.22-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64L4.57 11c-.04.34-.07.67-.07 1s.03.65.07.97l-2.11 1.66c-.19.15-.25.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1.01c.52.4 1.06.74 1.69.99l.37 2.65c.04.24.25.42.5.42h4c.25 0 .46-.18.5-.42l.37-2.65c.63-.26 1.17-.59 1.69-.99l2.49 1.01c.22.08.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64z"/></svg></span> Configuracoes Padrao<a class="headerlink" href="#index-configuracoes-padrao" title="Permanent link">&para;</a></h3>
 <h4 id="index-variaveis-comuns-main_produtopy"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.41 3c1.39 2.71 1.94 5.84 1.59 9-.2 3.16-1.3 6.29-3.17 9l-1.53-1c1.61-2.43 2.55-5.2 2.7-8 .34-2.8-.11-5.57-1.3-8zM5.17 3 6.7 4C5.09 6.43 4.15 9.2 4 12c-.34 2.8.12 5.57 1.3 8l-1.69 1c-1.4-2.71-1.96-5.83-1.61-9 .2-3.16 1.3-6.29 3.17-9m6.91 7.68 2.32-3.23h2.53l-3.78 5 2.2 4.92h-2.26L11.71 14l-2.43 3.33H6.76l3.9-5.12-2.13-4.76h2.27z"/></svg></span> Variaveis Comuns (<code>main_&lt;produto&gt;.py</code>):<a class="headerlink" href="#index-variaveis-comuns-main_produtopy" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#index-__codelineno-11-1"></a><span class="n">AMBIENTE_MONGO</span> <span class="o">=</span> <span class="s1">&#39;PRODUCAO&#39;</span>                 <span class="c1"># Ambiente MongoDB</span>
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#index-__codelineno-11-2"></a><span class="n">QDE_DIAS_RETROATIVOS</span> <span class="o">=</span> <span class="mi">3</span>                    <span class="c1"># Dias para busca incremental</span>
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#index-__codelineno-11-3"></a><span class="n">PERCENTUAL_MODIFICACAO_INCREMENTAL</span> <span class="o">=</span> <span class="mi">40</span>     <span class="c1"># Limite para modo DINAMICO</span>
-<a id="__codelineno-11-4" name="__codelineno-11-4" href="#index-__codelineno-11-4"></a><span class="n">TP_ATUALIZACAO</span> <span class="o">=</span> <span class="s1">&#39;DINAMICO&#39;</span>                 <span class="c1"># Tipo de atualização</span>
-<a id="__codelineno-11-5" name="__codelineno-11-5" href="#index-__codelineno-11-5"></a><span class="n">QDE_BILHETES</span> <span class="o">=</span> <span class="mi">5000</span>                         <span class="c1"># Lotes por query</span>
-<a id="__codelineno-11-6" name="__codelineno-11-6" href="#index-__codelineno-11-6"></a><span class="n">QDE_JOBS</span> <span class="o">=</span> <span class="mi">30</span>                               <span class="c1"># Paralelização</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#index-__codelineno-15-1"></a><span class="n">AMBIENTE_MONGO</span> <span class="o">=</span> <span class="s1">&#39;PRODUCAO&#39;</span>                 <span class="c1"># Ambiente MongoDB</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#index-__codelineno-15-2"></a><span class="n">QDE_DIAS_RETROATIVOS</span> <span class="o">=</span> <span class="mi">3</span>                    <span class="c1"># Dias para busca incremental</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#index-__codelineno-15-3"></a><span class="n">PERCENTUAL_MODIFICACAO_INCREMENTAL</span> <span class="o">=</span> <span class="mi">40</span>     <span class="c1"># Limite para modo DINAMICO</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#index-__codelineno-15-4"></a><span class="n">TP_ATUALIZACAO</span> <span class="o">=</span> <span class="s1">&#39;DINAMICO&#39;</span>                 <span class="c1"># Tipo de atualização</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#index-__codelineno-15-5"></a><span class="n">QDE_BILHETES</span> <span class="o">=</span> <span class="mi">5000</span>                         <span class="c1"># Lotes por query</span>
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#index-__codelineno-15-6"></a><span class="n">QDE_JOBS</span> <span class="o">=</span> <span class="mi">30</span>                               <span class="c1"># Paralelização</span>
 </code></pre></div>
 <h4 id="index-constantes-padrao-pipeline_produto_funcoespy"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.6 16.6 4.6-4.6-4.6-4.6L16 6l6 6-6 6zm-5.2 0L4.8 12l4.6-4.6L8 6l-6 6 6 6z"/></svg></span> Constantes Padrao (<code>pipeline_&lt;produto&gt;_funcoes.py</code>):<a class="headerlink" href="#index-constantes-padrao-pipeline_produto_funcoespy" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#index-__codelineno-12-1"></a><span class="n">ENCODING</span> <span class="o">=</span> <span class="s1">&#39;utf-8&#39;</span>
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#index-__codelineno-12-2"></a><span class="n">SEP</span> <span class="o">=</span> <span class="s1">&#39;|&#39;</span>
-<a id="__codelineno-12-3" name="__codelineno-12-3" href="#index-__codelineno-12-3"></a><span class="n">EXTENSAO</span> <span class="o">=</span> <span class="s1">&#39;csv&#39;</span>
-<a id="__codelineno-12-4" name="__codelineno-12-4" href="#index-__codelineno-12-4"></a><span class="n">PATH</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;E:\ARQUIVOS_MONGO\produto&quot;</span>
-<a id="__codelineno-12-5" name="__codelineno-12-5" href="#index-__codelineno-12-5"></a><span class="n">BANCO_UTILIZADO_PARA_IMPORTACAO</span> <span class="o">=</span> <span class="s1">&#39;POSTGRES&#39;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#index-__codelineno-16-1"></a><span class="n">ENCODING</span> <span class="o">=</span> <span class="s1">&#39;utf-8&#39;</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#index-__codelineno-16-2"></a><span class="n">SEP</span> <span class="o">=</span> <span class="s1">&#39;|&#39;</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#index-__codelineno-16-3"></a><span class="n">EXTENSAO</span> <span class="o">=</span> <span class="s1">&#39;csv&#39;</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#index-__codelineno-16-4"></a><span class="n">PATH</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;E:\ARQUIVOS_MONGO\produto&quot;</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#index-__codelineno-16-5"></a><span class="n">BANCO_UTILIZADO_PARA_IMPORTACAO</span> <span class="o">=</span> <span class="s1">&#39;POSTGRES&#39;</span>
 </code></pre></div>
 <h4 id="index-calculo-padrao-de-valor-tarifario"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2m0 2v4h10V4zm0 6v2h2v-2zm4 0v2h2v-2zm4 0v2h2v-2zm-8 4v2h2v-2zm4 0v2h2v-2zm4 0v2h2v-2zm-8 4v2h2v-2zm4 0v2h2v-2zm4 0v2h2v-2z"/></svg></span> Calculo Padrao de Valor Tarifario<a class="headerlink" href="#index-calculo-padrao-de-valor-tarifario" title="Permanent link">&para;</a></h4>
 <div class="admonition note">
 <p class="admonition-title">Formula Universal</p>
 <p>O calculo do <code>valor_tarifario</code> se repete para todos os produtos que possuem parcelas:</p>
 </div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#index-__codelineno-13-1"></a><span class="c1"># Fórmula padrão aplicada na maioria dos produtos</span>
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#index-__codelineno-13-2"></a><span class="n">valor_tarifario</span> <span class="o">=</span> <span class="nb">round</span><span class="p">((</span><span class="n">valor_parcela</span> <span class="o">/</span> <span class="mf">107.38</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#index-__codelineno-17-1"></a><span class="c1"># Fórmula padrão aplicada na maioria dos produtos</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#index-__codelineno-17-2"></a><span class="n">valor_tarifario</span> <span class="o">=</span> <span class="nb">round</span><span class="p">((</span><span class="n">valor_parcela</span> <span class="o">/</span> <span class="mf">107.38</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 </code></pre></div>
 <h3 id="index-schema-e-validacao"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 17-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9m-6-8L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5z"/></svg></span> Schema e Validacao<a class="headerlink" href="#index-schema-e-validacao" title="Permanent link">&para;</a></h3>
 <h4 id="index-campos-padrao-obrigatorios"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 5h6v6H3zm2 2v2h2V7zm6 0h10v2H11zm0 8h10v2H11zm-6 5-3.5-3.5 1.41-1.41L5 17.17l4.59-4.58L11 14z"/></svg></span> Campos Padrao Obrigatorios<a class="headerlink" href="#index-campos-padrao-obrigatorios" title="Permanent link">&para;</a></h4>
@@ -6565,22 +6620,22 @@ INDEX_TABELA_BANCO_PARCELAS = {
 <div class="admonition info">
 <p class="admonition-title"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3C7.58 3 4 4.79 4 7s3.58 4 8 4 8-1.79 8-4-3.58-4-8-4M4 9v3c0 2.21 3.58 4 8 4s8-1.79 8-4V9c0 2.21-3.58 4-8 4s-8-1.79-8-4m0 5v3c0 2.21 3.58 4 8 4s8-1.79 8-4v-3c0 2.21-3.58 4-8 4s-8-1.79-8-4"/></svg></span> Conexão MongoDB</p>
 <p>Gerência conexões com clusters de produção e homologação com autenticação segura via <code>.env</code></p>
-<p><a href="#ferramentas-1-conexão-mongodb">Ver funções <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg></span></a></p>
+<p><a href="#ferramentas-1-conexao-mongodb">Ver funções <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg></span></a></p>
 </div>
 <div class="admonition info">
 <p class="admonition-title"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.5 15.5a.5.5 0 0 1-.5.5.5.5 0 0 1-.5-.5v-7c0-1.93-2.07-3.5-4-3.5H6a4 4 0 0 0-4 4v10h4v-4h5v4h4v-4.5a.5.5 0 0 1 .5-.5.5.5 0 0 1 .5.5V16a3 3 0 0 0 3 3 3 3 0 0 0 3-3v-2h-2.5z"/></svg></span> Conexão PostgreSQL</p>
 <p>Operações otimizadas com COPY, gerenciamento de indices e estrategias de atualização</p>
-<p><a href="#ferramentas-2-conexão-postgresql">Ver funções <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg></span></a></p>
+<p><a href="#ferramentas-2-conexao-postgresql">Ver funções <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg></span></a></p>
 </div>
 <div class="admonition info">
 <p class="admonition-title"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81z"/></svg></span> Funções Gerais</p>
 <p>Utilitários para transformação de dados, conversão de tipos e validação de schemas</p>
-<p><a href="#ferramentas-3-funções-gerais">Ver funções <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg></span></a></p>
+<p><a href="#ferramentas-3-funcoes-gerais">Ver funções <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg></span></a></p>
 </div>
 <div class="admonition info">
 <p class="admonition-title"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 18v4h-4v-3h-3v-3h-3l-2.26-2.26c-.55.17-1.13.26-1.74.26a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6c0 .61-.09 1.19-.26 1.74zM7 5a2 2 0 0 0-2 2 2 2 0 0 0 2 2 2 2 0 0 0 2-2 2 2 0 0 0-2-2"/></svg></span> Variáveis de Ambiente</p>
 <p>Configurações de credenciais para MongoDB e PostgreSQL em produção e homologação</p>
-<p><a href="#ferramentas-4-variáveis-de-ambiente">Ver configuração <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg></span></a></p>
+<p><a href="#ferramentas-4-variaveis-de-ambiente">Ver configuração <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg></span></a></p>
 </div>
 <div class="admonition info">
 <p class="admonition-title"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 15.5A3.5 3.5 0 0 1 8.5 12 3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5 3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97s-.03-.66-.07-1l2.11-1.63c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.31-.61-.22l-2.49 1c-.52-.39-1.06-.73-1.69-.98l-.37-2.65A.506.506 0 0 0 14 2h-4c-.25 0-.46.18-.5.42l-.37 2.65c-.63.25-1.17.59-1.69.98l-2.49-1c-.22-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64L4.57 11c-.04.34-.07.67-.07 1s.03.65.07.97l-2.11 1.66c-.19.15-.25.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1.01c.52.4 1.06.74 1.69.99l.37 2.65c.04.24.25.42.5.42h4c.25 0 .46-.18.5-.42l.37-2.65c.63-.26 1.17-.59 1.69-.99l2.49 1.01c.22.08.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64z"/></svg></span> Config Loader</p>
